@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+
+body {
+background-color:gainsboro
+;}
+
+.div1:hover{
+background-color:gray
+}
+
+
+.div2:hover{
+background-color:gray
+}
+
+.div3:hover{
+background-color:gray
+}
+
+
+
+h1{
+color: maroon;
+text-align:center;
+font-family:Serif;
+}
+
+header{background-color:peru;
+}
+
+.boxWidth{
+border-radius:1px;
+color:maroon;
+padding:4.5vh;
+}
+
+.bordertop {
+border-top:0.5px solid silver;
+}
+
+.p1, .p2, .p3 {
+display:none;
+margin:7px;
+width:90vw;
+color:darkslateblue;
+font-size:5vw
+}
+
+.div1, .div2, .div3{
+font-size:5vw;
+font-weight:bold;
+background-color:darkgray;
+}
+
+.parent {
+background-color:lightgray;
+border-radius:4px;
+border:2px solid maroon;
+}
+
+.spanplus {
+float:right;
+position:relative;
+}
+
+
+.spanminus {
+float:right;
+position:absolute;
+right:10vw;
+}
+
+.spanminus1, .spanminus2, .spanminus3 {
+display:none;
+}
+
+
+.colorchange{
+color: red;
+font-size:6vw;
+animation-name: colorchange;
+animation-duration: 4s;
+animation-timing-function:linear;
+animation-iteration-count:infinite;
+}
+@keyframes colorchange {
+0% {color: red; transform:TranslateX(-20vw);}
+25% {color:tomato; transform:TranslateX(0vw)}
+50% {color: green; transform:TranslateX(20vw);}
+75% {color:crimson; transform:TranslateX(0vw);}
+100% { color:blue; transform:TranslateX(-20vw); }
+}
+
+
+footer{
+background-color:peru;
+font-size:3.5vw;
+color:indigo;
+padding :1.5%;
+text-align:center}
+</style>
+
+<title></title>
+
+<script type="text/javascript" src = "jquery-1.9.1.min.js" > 
+</script>
+<script type="text/javascript" src ="umbrella.min.js "></script>
+</head>
+
+<body>
+
+  <header>
+      <h1 class = "colorchange"> <b>MY ACCORDION<b></h1>
+  </header>
+    
+  <main>
+    <div class ="parent"> 
+   
+       <div class="div1 boxWidth"> Section 1  <span class ="spanplus div1span"> + </span> <span class ="spanminus spanminus1"> - </span>
+       </div> 
+
+       <p class = "p1"> Lorem ipsum dolor sit amet, 
+        consectetur adipisicing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+       </p>
+     
+       <div class ="div2 boxWidth bordertop"> Section 2 <span class="spanplus div2span"> + </span> <span class ="spanminus spanminus2">-</span>
+       </div> 
+
+      
+       <p class = "p2"> Lorem ipsum dolor sit amet, 
+        consectetur adipisicing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+       </p>
+      
+       <div class ="div3 boxWidth bordertop"> Section 3  <span class="spanplus div3span"> + </span> <span class="spanminus spanminus3"> - </span>
+       </div> 
+     
+       <p class = "p3"> Lorem ipsum dolor sit amet, 
+        consectetur adipisicing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+       </p>
+   
+     </div>     
+     
+   </main>
+
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+    
+  <footer>
+      <p>Copyright &copy ugonna 2018.<br> <br>you can use the code as you want tho :)</p>
+  </footer>
+
+
+
+
+<script type="text/javascript">
+ 
+ //variable Declaration
+ 
+ const div1 = $('.div1');
+ const div2 = $('.div2');
+ const div3 = $('.div3');
+ const p1 = $('.p1');
+ const p2 = $('.p2');
+ const p3 = $('.p3');
+ const div1span = $('.div1span');
+ const div2span = $('.div2span');
+ const div3span = $('.div3span');
+ 
+ 
+ // Callback function
+ 
+ const callback1 = () => {p1.slideToggle(500); div1span.toggle(); $('.spanminus1').toggle()}
+ const callback2 = () => {p2.slideToggle(500); div2span.toggle(); $('.spanminus2').toggle()}
+ const callback3 = () => {p3.slideToggle(500); div3span.toggle(); $('.spanminus3').toggle()}
+ 
+ 
+ // Calling click event and executing callback
+ 
+ div1.click(callback1)
+ 
+ div2.click(callback2)
+ 
+ div3.click(callback3)
+ 
+ 
+</script>
+
+</body>
+
+</html>
